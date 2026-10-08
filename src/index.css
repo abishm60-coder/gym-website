@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #0A0A0C;
+    color: #F1F1F4;
+  }
+  
+  body {
+    background-color: #0A0A0C;
+    overflow-x: hidden;
+    width: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #272730;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D92338;
+}
+
+/* Double-Bezel Hardware Finish (Doppelrand Architecture) */
+.double-bezel-outer {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px;
+  border-radius: 1.75rem;
+  transition: all 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.double-bezel-outer:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(217, 35, 56, 0.4);
+}
+
+.double-bezel-inner {
+  background: #121216;
+  border-radius: calc(1.75rem - 6px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  height: 100%;
+  width: 100%;
+}
