@@ -50,26 +50,45 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden w-full bg-[#0A0A0C] text-[#F1F1F4] selection:bg-gym-crimson selection:text-white">
-      <Navbar onDummyWhatsApp={handleWhatsAppClick} />
+    <div className="min-h-screen relative overflow-x-hidden w-full bg-[#070709] text-[#F1F1F4] selection:bg-gym-crimson selection:text-white">
       
-      <main className="overflow-x-hidden w-full max-w-full">
-        <Hero onDummyWhatsApp={handleWhatsAppClick} />
-        <About />
-        <Programs onDummyWhatsApp={handleWhatsAppClick} />
-        <Schedule />
-        <Trainers />
-        <Memberships onDummyWhatsApp={handleWhatsAppClick} />
-        <Testimonials />
-        <Contact onDummyWhatsApp={handleWhatsAppClick} />
-      </main>
+      {/* Dynamic Background Atmosphere System */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Subtle Luxury Matrix Grid Pattern */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-80" />
+        
+        {/* Layered Volumetric Light Auras */}
+        <div className="absolute inset-0 radial-aura-top" />
+        <div className="absolute inset-0 radial-aura-mid" />
+        <div className="absolute inset-0 radial-aura-bottom" />
+        
+        {/* Subtle Atmospheric Light Spheres */}
+        <div className="absolute top-[18%] left-[10%] w-[500px] h-[500px] bg-gym-crimson/5 rounded-full blur-[140px]" />
+        <div className="absolute top-[52%] right-[5%] w-[600px] h-[600px] bg-gym-crimson/8 rounded-full blur-[160px]" />
+        <div className="absolute top-[80%] left-[15%] w-[550px] h-[550px] bg-amber-500/5 rounded-full blur-[150px]" />
+      </div>
 
-      <Footer onDummyWhatsApp={handleWhatsAppClick} />
+      <div className="relative z-10">
+        <Navbar onDummyWhatsApp={handleWhatsAppClick} />
+        
+        <main className="overflow-x-hidden w-full max-w-full">
+          <Hero onDummyWhatsApp={handleWhatsAppClick} />
+          <About />
+          <Programs onDummyWhatsApp={handleWhatsAppClick} />
+          <Schedule />
+          <Trainers />
+          <Memberships onDummyWhatsApp={handleWhatsAppClick} />
+          <Testimonials />
+          <Contact onDummyWhatsApp={handleWhatsAppClick} />
+        </main>
+
+        <Footer onDummyWhatsApp={handleWhatsAppClick} />
+      </div>
       
       {/* Precision Floating WhatsApp Button (Dummy Mode) */}
       <button 
         onClick={handleWhatsAppClick}
-        className="fixed bottom-6 right-6 z-50 bg-[#121216] border border-white/15 hover:border-gym-crimson text-white p-3.5 rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.8)] transition-all duration-300 hover:scale-105 flex items-center justify-center group cursor-pointer"
+        className="fixed bottom-6 right-6 z-50 bg-[#121216]/90 backdrop-blur-xl border border-white/15 hover:border-gym-crimson text-white p-3.5 rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.8)] transition-all duration-300 hover:scale-105 flex items-center justify-center group cursor-pointer"
         aria-label={`Inquire ${gymDetails.name} on WhatsApp`}
       >
         <MessageSquare size={19} className="text-white group-hover:text-gym-crimson transition-colors" />
@@ -80,7 +99,7 @@ function App() {
 
       {/* Floating Feedback Notice */}
       {dummyNotice && (
-        <div className="fixed bottom-24 right-6 z-50 bg-[#14141A] border border-white/10 shadow-2xl p-4 rounded-2xl text-white text-xs max-w-sm flex items-start gap-3 backdrop-blur-xl">
+        <div className="fixed bottom-24 right-6 z-50 bg-[#14141A]/95 border border-white/10 shadow-2xl p-4 rounded-2xl text-white text-xs max-w-sm flex items-start gap-3 backdrop-blur-xl">
           <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center text-gym-crimson shrink-0">
             <CheckCircle2 size={14} />
           </div>

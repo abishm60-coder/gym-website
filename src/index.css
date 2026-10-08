@@ -5,12 +5,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #0A0A0C;
+    background-color: #070709;
     color: #F1F1F4;
   }
   
   body {
-    background-color: #0A0A0C;
+    background-color: #070709;
     overflow-x: hidden;
     width: 100%;
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -28,7 +28,7 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0C;
+  background: #070709;
 }
 ::-webkit-scrollbar-thumb {
   background: #272730;
@@ -38,24 +38,49 @@
   background: #D92338;
 }
 
+/* Global Subtle Luxury Matrix Pattern */
+.bg-grid-pattern {
+  background-size: 56px 56px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+/* Dynamic Radial Aura Glows */
+.radial-aura-top {
+  background: radial-gradient(circle 600px at 50% 0%, rgba(217, 35, 56, 0.18), transparent 70%);
+}
+
+.radial-aura-mid {
+  background: radial-gradient(circle 700px at 80% 45%, rgba(217, 35, 56, 0.12), transparent 70%);
+}
+
+.radial-aura-bottom {
+  background: radial-gradient(circle 650px at 20% 75%, rgba(245, 158, 11, 0.08), transparent 70%);
+}
+
 /* Double-Bezel Hardware Finish (Doppelrand Architecture) */
 .double-bezel-outer {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 6px;
   border-radius: 1.75rem;
   transition: all 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
 }
 
 .double-bezel-outer:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(217, 35, 56, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(217, 35, 56, 0.35);
+  box-shadow: 0 20px 50px -10px rgba(217, 35, 56, 0.12);
 }
 
 .double-bezel-inner {
-  background: #121216;
+  background: #111116;
   border-radius: calc(1.75rem - 6px);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
   height: 100%;
   width: 100%;
 }

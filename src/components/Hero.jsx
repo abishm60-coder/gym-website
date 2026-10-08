@@ -22,25 +22,25 @@ const Hero = ({ onDummyWhatsApp }) => {
     <section 
       ref={heroRef}
       id="hero" 
-      className="relative min-h-[100dvh] flex flex-col justify-center items-center pt-32 pb-20 px-4 sm:px-6 bg-[#0A0A0C] overflow-hidden"
+      className="relative min-h-[100dvh] flex flex-col justify-center items-center pt-32 pb-20 px-4 sm:px-6 overflow-hidden"
     >
-      {/* Precision Background Atmosphere */}
+      {/* Precision Hero Photography Background with Soft Ambient Reveal */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-25 filter contrast-125"
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-35 filter contrast-125"
         style={{ backgroundImage: `url("${gymDetails.heroImage || '/bg.jpg'}")` }}
       />
       
-      {/* Clean Radial Fade */}
-      <div className="absolute inset-0 z-0 bg-radial-gradient from-transparent via-[#0A0A0C]/80 to-[#0A0A0C] pointer-events-none" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-gym-crimson/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Multi-layered Vignette & Glow */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#070709]/85 via-[#070709]/70 to-[#070709] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-gym-crimson/15 rounded-full blur-[160px] pointer-events-none" />
 
       {/* Main Container */}
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center">
         
         {/* Eyebrow Hardware Pill */}
-        <div className="hero-fade inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-gym-crimson" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">
+        <div className="hero-fade inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md mb-8 shadow-sm">
+          <span className="w-1.5 h-1.5 rounded-full bg-gym-crimson animate-pulse" />
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
             Unisex Athletic Facility • {gymDetails.location}
           </span>
         </div>
@@ -48,8 +48,8 @@ const Hero = ({ onDummyWhatsApp }) => {
         {/* Guaranteed 2-Line Wide Headline */}
         <div ref={headlineRef} className="w-full max-w-4xl mb-6">
           <h1 className="hero-fade text-4xl sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black uppercase tracking-tight text-white leading-[1.05] md:leading-[0.98]">
-            <span className="block">Unleash Your Potential</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gym-crimson">
+            <span className="block drop-shadow-sm">Unleash Your Potential</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-gym-crimson">
               Burn Calories & Build Strength
             </span>
           </h1>
@@ -96,7 +96,7 @@ const Hero = ({ onDummyWhatsApp }) => {
           
           <button
             onClick={onDummyWhatsApp}
-            className="group w-full sm:w-auto rounded-full bg-white text-[#0A0A0C] pl-6 pr-2 py-2 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-4 transition-all duration-500 ease-fluid active:scale-[0.98] hover:bg-gym-crimson hover:text-white cursor-pointer"
+            className="group w-full sm:w-auto rounded-full bg-white text-[#0A0A0C] pl-6 pr-2 py-2 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-4 transition-all duration-500 ease-fluid active:scale-[0.98] hover:bg-gym-crimson hover:text-white cursor-pointer shadow-lg shadow-black/40"
           >
             <span>Start Training</span>
             <div className="w-7 h-7 rounded-full bg-black/10 group-hover:bg-white/20 flex items-center justify-center transition-transform duration-500 ease-fluid group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
