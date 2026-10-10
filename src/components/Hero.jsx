@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gymDetails } from '../data/gymData';
-import { ArrowUpRight, Clock, Layers, ChevronDown } from 'lucide-react';
+import { ArrowUpRight, Clock, Layers, ChevronDown, Flame, Shield, Award } from 'lucide-react';
 import gsap from 'gsap';
 
 const Hero = ({ onDummyWhatsApp }) => {
@@ -10,8 +10,8 @@ const Hero = ({ onDummyWhatsApp }) => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo('.hero-fade',
-        { y: 35, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: 'power3.out' }
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.9, stagger: 0.12, ease: 'power3.out' }
       );
     }, heroRef);
 
@@ -22,68 +22,68 @@ const Hero = ({ onDummyWhatsApp }) => {
     <section 
       ref={heroRef}
       id="hero" 
-      className="relative min-h-[100dvh] flex flex-col justify-center items-center pt-32 pb-20 px-4 sm:px-6 overflow-hidden"
+      className="relative min-h-[100dvh] flex flex-col justify-center items-center pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 overflow-hidden"
     >
-      {/* Precision Hero Photography Background with Soft Ambient Reveal */}
+      {/* Background Media with Depth Vignette */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-35 filter contrast-125"
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-30 filter contrast-125 scale-105 will-change-transform"
         style={{ backgroundImage: `url("${gymDetails.heroImage || '/bg.jpg'}")` }}
       />
       
-      {/* Multi-layered Vignette & Glow */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#070709]/85 via-[#070709]/70 to-[#070709] pointer-events-none" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[850px] h-[450px] bg-gym-crimson/15 rounded-full blur-[160px] pointer-events-none" />
+      {/* Ambient Lighting Cones */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#070709]/90 via-[#070709]/60 to-[#070709] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-r from-gym-crimson/20 via-red-600/10 to-amber-500/10 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Main Container */}
+      {/* Main Content Container */}
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center">
         
         {/* Eyebrow Hardware Pill */}
-        <div className="hero-fade inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md mb-8 shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-gym-crimson animate-pulse" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
-            Unisex Athletic Facility • {gymDetails.location}
+        <div className="hero-fade inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md mb-6 sm:mb-8 shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-gym-crimson animate-ping" />
+          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-white/90">
+            Unisex Fitness Sanctuary • {gymDetails.location}
           </span>
         </div>
 
-        {/* Guaranteed 2-Line Wide Headline */}
-        <div ref={headlineRef} className="w-full max-w-4xl mb-6">
-          <h1 className="hero-fade text-4xl sm:text-6xl md:text-7xl lg:text-[5.2rem] font-black uppercase tracking-tight text-white leading-[1.05] md:leading-[0.98]">
-            <span className="block drop-shadow-sm">Unleash Your Potential</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-gym-crimson">
+        {/* Guaranteed 2-3 Line Fluid Responsive Headline */}
+        <div ref={headlineRef} className="w-full max-w-4xl mb-5 sm:mb-6">
+          <h1 className="hero-fade text-3xl sm:text-5xl md:text-6xl lg:text-[5rem] font-black uppercase tracking-tight text-white leading-[1.08] sm:leading-[1.0] md:leading-[0.96]">
+            <span className="block drop-shadow-md">Unleash Your Potential</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-red-100 to-gym-crimson">
               Burn Calories & Build Strength
             </span>
           </h1>
         </div>
 
         {/* Balanced Editorial Body */}
-        <p className="hero-fade text-sm sm:text-base md:text-lg text-gym-muted max-w-2xl mx-auto leading-relaxed mb-10 font-normal">
-          Madurai's premier training sanctuary. Engineered with dedicated dual floors for women and men, biomechanical equipment, and private coaching.
+        <p className="hero-fade text-sm sm:text-base md:text-lg text-gym-muted max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10 font-normal px-2">
+          Madurai's premier training club. Architected with dedicated dual floors for women and men, biomechanical machinery, and certified coaching.
         </p>
 
-        {/* Double-Bezel Spec Enclosure (Hardware Look) */}
-        <div className="hero-fade w-full max-w-2xl double-bezel-outer mb-10">
-          <div className="double-bezel-inner p-5 sm:p-6 text-left">
-            <div className="grid sm:grid-cols-2 gap-6 items-center">
+        {/* Double-Bezel Spec Enclosure (Hardware Finish) */}
+        <div className="hero-fade w-full max-w-3xl double-bezel-outer mb-8 sm:mb-10">
+          <div className="double-bezel-inner p-4 sm:p-6 text-left">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               
-              <div className="flex items-start gap-3.5">
-                <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 shrink-0">
-                  <Clock size={18} />
+              <div className="flex items-start gap-3.5 p-3 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent">
+                <div className="w-10 h-10 rounded-xl bg-gym-crimson/10 border border-gym-crimson/20 flex items-center justify-center text-gym-crimson shrink-0">
+                  <Clock size={19} />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-gym-muted mb-0.5">Operating Hours</p>
-                  <p className="text-xs sm:text-sm font-semibold text-white">Mon – Sat: 5:30 AM – 9:00 PM</p>
-                  <p className="text-[11px] text-white/40">Sunday Closed (Recovery)</p>
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-gym-muted mb-0.5">Operating Timetable</p>
+                  <p className="text-xs sm:text-sm font-bold text-white">Mon – Sat: 5:30 AM – 9:00 PM</p>
+                  <p className="text-[11px] text-white/40 font-medium">Sunday Closed (Recovery)</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5 border-t sm:border-t-0 sm:border-l border-white/5 pt-4 sm:pt-0 sm:pl-6">
-                <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gym-crimson shrink-0">
-                  <Layers size={18} />
+              <div className="flex items-start gap-3.5 border-t sm:border-t-0 sm:border-l border-white/5 pt-3 sm:pt-0 sm:pl-6 p-3 sm:p-0 rounded-xl bg-white/[0.02] sm:bg-transparent">
+                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gym-crimson shrink-0">
+                  <Layers size={19} />
                 </div>
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-wider text-gym-muted mb-0.5">Dual Floor Architecture</p>
-                  <p className="text-xs sm:text-sm font-semibold text-white">2nd Floor: Women Only</p>
-                  <p className="text-[11px] text-white/40">3rd Floor: Men's Zone</p>
+                  <p className="text-xs sm:text-sm font-bold text-white">2nd Floor: Women Only Studio</p>
+                  <p className="text-[11px] text-white/40 font-medium">3rd Floor: Men's Zone</p>
                 </div>
               </div>
 
@@ -91,14 +91,14 @@ const Hero = ({ onDummyWhatsApp }) => {
           </div>
         </div>
 
-        {/* Precision Action Buttons */}
-        <div className="hero-fade flex flex-col sm:flex-row items-center gap-3 w-full justify-center">
+        {/* Action Buttons */}
+        <div className="hero-fade flex flex-col sm:flex-row items-center gap-3 w-full justify-center max-w-md sm:max-w-none">
           
           <button
             onClick={onDummyWhatsApp}
-            className="group w-full sm:w-auto rounded-full bg-white text-[#0A0A0C] pl-6 pr-2 py-2 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-4 transition-all duration-500 ease-fluid active:scale-[0.98] hover:bg-gym-crimson hover:text-white cursor-pointer shadow-lg shadow-black/40"
+            className="group w-full sm:w-auto rounded-full bg-white text-[#0A0A0C] pl-6 pr-2.5 py-3 text-xs font-black uppercase tracking-wider flex items-center justify-center gap-4 transition-all duration-500 ease-fluid active:scale-[0.98] hover:bg-gym-crimson hover:text-white cursor-pointer shadow-xl shadow-black/40"
           >
-            <span>Start Training</span>
+            <span>Start Training Today</span>
             <div className="w-7 h-7 rounded-full bg-black/10 group-hover:bg-white/20 flex items-center justify-center transition-transform duration-500 ease-fluid group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <ArrowUpRight size={15} />
             </div>
@@ -106,19 +106,35 @@ const Hero = ({ onDummyWhatsApp }) => {
 
           <a 
             href="#memberships" 
-            className="w-full sm:w-auto rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white px-7 py-3 text-xs font-semibold uppercase tracking-wider transition-all duration-300"
+            className="w-full sm:w-auto rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/15 text-white px-7 py-3 text-xs font-bold uppercase tracking-wider transition-all duration-300 text-center"
           >
-            Explore Memberships
+            Explore Memberships (₹500/mo)
           </a>
 
+        </div>
+
+        {/* Mini Trust Stats */}
+        <div className="hero-fade mt-10 sm:mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-[11px] text-white/50 uppercase tracking-widest font-bold">
+          <div className="flex items-center gap-2">
+            <Shield size={14} className="text-gym-crimson" />
+            <span>100% Private Floors</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Flame size={14} className="text-gym-crimson" />
+            <span>Heavy Free Weights</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Award size={14} className="text-gym-crimson" />
+            <span>Certified Coaching</span>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
         <a 
           href="#about"
-          className="hero-fade mt-16 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-gym-muted hover:text-white transition-colors"
+          className="hero-fade mt-10 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-gym-muted hover:text-white transition-colors"
         >
-          <span>Scroll down</span>
+          <span>Discover facility</span>
           <ChevronDown size={13} className="animate-bounce" />
         </a>
 

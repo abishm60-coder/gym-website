@@ -52,17 +52,17 @@ const Programs = ({ onDummyWhatsApp }) => {
     <section 
       ref={containerRef}
       id="programs" 
-      className="py-32 md:py-40 px-4 sm:px-6 bg-[#0E0E12] border-t border-white/5"
+      className="py-24 sm:py-32 md:py-40 px-4 sm:px-6 bg-[#0E0E12]/80 border-t border-white/5 relative"
     >
       <div className="max-w-5xl mx-auto">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
           <div className="max-w-xl">
-            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-gym-crimson mb-3 block">
+            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.25em] text-gym-crimson mb-3 block">
               Disciplines & Protocols
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-none">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight">
               Specialized Programs
             </h2>
           </div>
@@ -71,8 +71,8 @@ const Programs = ({ onDummyWhatsApp }) => {
           </p>
         </div>
 
-        {/* Gapless Mathematically Interlocking Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 grid-flow-dense gap-5 auto-rows-[280px]">
+        {/* Responsive Bento Grid with safe auto height on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 grid-flow-dense gap-4 sm:gap-5 auto-rows-[auto] sm:auto-rows-[280px]">
           {programs.map((program, idx) => {
             const Icon = iconMap[program.icon] || Dumbbell;
             const spanClass = bentoSpans[idx] || "lg:col-span-6";
@@ -81,26 +81,26 @@ const Programs = ({ onDummyWhatsApp }) => {
             return (
               <div 
                 key={program.id}
-                className={`bento-item ${spanClass} double-bezel-outer p-1.5`}
+                className={`bento-item ${spanClass} double-bezel-outer p-1.5 min-h-[260px] sm:min-h-0`}
               >
-                <div className="double-bezel-inner relative overflow-hidden flex flex-col justify-end p-7 group">
+                <div className="double-bezel-inner relative overflow-hidden flex flex-col justify-end p-6 sm:p-7 group h-full">
                   
                   {/* Clean Background Image */}
                   <div 
-                    className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 ease-fluid group-hover:scale-105 opacity-30 group-hover:opacity-40"
+                    className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 ease-fluid group-hover:scale-105 opacity-35 group-hover:opacity-45"
                     style={{ backgroundImage: `url("${bgImg}")` }}
                   />
                   
                   {/* Dark Vignette Wash */}
-                  <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/85 to-transparent" />
+                  <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/80 to-transparent" />
 
                   {/* Content */}
                   <div className="relative z-10">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-3 group-hover:bg-gym-crimson group-hover:border-gym-crimson transition-colors duration-500">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-3 group-hover:bg-gym-crimson group-hover:border-gym-crimson transition-colors duration-500 shadow-md">
                       <Icon size={20} />
                     </div>
 
-                    <h3 className="text-xl font-bold uppercase text-white mb-1.5 group-hover:text-gym-crimson transition-colors">
+                    <h3 className="text-lg sm:text-xl font-bold uppercase text-white mb-1.5 group-hover:text-gym-crimson transition-colors">
                       {program.title}
                     </h3>
 
@@ -110,7 +110,7 @@ const Programs = ({ onDummyWhatsApp }) => {
 
                     <button
                       onClick={onDummyWhatsApp}
-                      className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/80 hover:text-gym-crimson transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-white/90 hover:text-gym-crimson transition-colors cursor-pointer"
                     >
                       <span>Inquire Protocol</span>
                       <ArrowUpRight size={13} />
