@@ -166,7 +166,7 @@ const Contact = ({ onDummyWhatsApp }) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="e.g. John Doe"
+                    placeholder="e.g. Name"
                     className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-gym-crimson transition-colors"
                   />
                 </div>
@@ -181,7 +181,7 @@ const Contact = ({ onDummyWhatsApp }) => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="e.g. +91 9876543210"
+                      placeholder="e.g. +91"
                       className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-gym-crimson transition-colors"
                     />
                   </div>
